@@ -2,7 +2,7 @@ import React from 'react'
 
 function Personajes() {
   return (
-    <div>Personajes</div>
+    <div>Personajes vacios</div>
   )
 }
 

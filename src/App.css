@@ -5,3 +5,16 @@
   text-align: center;
 }
 
+.navbar {
+  background-color: aqua;
+  width: '100%';
+  display: flex;
+  justify-content: flex-start;
+}
+.link {
+    font-size: 1.3rem;
+}
+.active {
+  color: blueviolet;
+}
+

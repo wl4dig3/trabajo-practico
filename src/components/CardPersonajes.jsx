@@ -6,7 +6,7 @@ function CardPersonajes({name, image, id}) {
         navigate(`/personajes/${id}`)
     }
   return (
-    <div id={id} onClick={handleClick}>
+    <div id={id} onClick={handleClick} style={{cursor: 'pointer', padding: '0.5rem'}}>
         <h2>{name}</h2>
         <img src={image} alt={name} />
     </div>

@@ -11,7 +11,7 @@ function Home() {
         .then(data => setPersonajes(data.results))
     }, [])
   return (
-    <div>
+    <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', flexWrap: ' wrap' }}>
         {
             personajes.map( p => <CardPersonajes key={p.id} {...p} />)
         }
