@@ -3,7 +3,7 @@ import CardPersonajes from '../components/CardPersonajes';
 
 
 function Home() {
-    const [personajes, setPersonajes] = useState([]);
+    const [allPokemons, setAllPokemons] = useState([]);
     const [offset, setOffset] = useState(0);
 
     const BASE_URL = 'https://pokeapi.co/api/v2/';
@@ -16,7 +16,7 @@ function Home() {
             return data
         });
         const results = await Promise.all(promises);
-        setPersonajes(results);
+        setAllPokemons([...allPokemons, ...results]);
     }
     useEffect( () => {
         getAllPokemon()
@@ -24,7 +24,7 @@ function Home() {
   return (
     <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row', flexWrap: ' wrap' }}>
         {
-            personajes.map( p => <CardPersonajes key={p.name} {...p} />)
+            allPokemons.map( pokemon => <CardPersonajes key={pokemon.name} pokemon={pokemon} />)
         }
     </div>
   )
