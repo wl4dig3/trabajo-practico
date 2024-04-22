@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function Details() {
     // const [loading, setLoading] = useEffect(true):
@@ -12,13 +14,27 @@ function Details() {
         // setLoading(false)
     },[id])
   return (
-    <div>
+    <div className='container-card-detail'>
       {personaje !== undefined ? (
         <>
-          <h1>{personaje.name}</h1>
-          {/* <img src={personaje.image} alt={personaje.name} /> */}
-          {/* <p>Estatus: {personaje.status}</p> */}
-          {/* <p>Especie: {personaje.species}</p> */}
+          <Card className="cards-style">
+            <Card.Img
+              className="imagen"
+              variant="top"
+              src={personaje.sprites.other.dream_world.front_default}
+            />
+            <Card.Body>
+              <Card.Title className='card-title'>Nombre: {personaje.name.toUpperCase()}</Card.Title>
+              <Card.Text>Puntos: {personaje.stats[0].base_stat}</Card.Text>
+              <Card.Text>
+                Movimiento mortal: {personaje.moves[0].move.name}
+              </Card.Text>
+              <Card.Text>
+                Indice de juego: {personaje.game_indices[0].game_index}
+              </Card.Text>
+              <Card.Text></Card.Text>
+            </Card.Body>
+          </Card>
         </>
       ) : (
         <h2>No existe ese personaje</h2>

@@ -1,15 +1,12 @@
-import {Link} from 'react-router-dom';
-import {useState} from 'react'
+import {NavLink} from 'react-router-dom';
 
 function NavBar() {
-    const [isActive, setIsActive] = useState(false);
-    const changeActive = () => {
-        
-    }
+    // eslint-disable-next-line no-unused-vars
+    const changeActive = ({isActive}) => { isActive ? 'active' : undefined}
   return (
     <nav className='navbar'>
-      <Link className='link' style={{marginRight: '1rem'}} to='/'>Home</Link>
-      <Link className='link' to='/personajes'>Detail</Link>
+      <NavLink className='link {changeActive}' style={{marginRight: '1rem'}} to='/'>Home</NavLink>
+      <NavLink className='link {changeActive}' to='/personajes'>Detail</NavLink>
     </nav>
   )
 }
